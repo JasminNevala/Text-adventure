@@ -1,5 +1,5 @@
-from Classes import world
-from Classes.player import Player
+import world
+from player import Player
 
 
 def play():

@@ -1,7 +1,3 @@
-
-import Classes.tiles
-
-
 _world = {}
 starting_position = (0, 0)
 

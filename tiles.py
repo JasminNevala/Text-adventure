@@ -1,7 +1,7 @@
-from Classes import enemies
-from Classes import items
-from Classes import actions
-from Classes import world
+import enemies
+import items
+import actions
+import world
 
 
 class MapTile():
