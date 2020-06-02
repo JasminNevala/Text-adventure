@@ -6,7 +6,7 @@ import random
 
 class Player:
     def __init__(self):
-        self.inventory = [items.Gold(15), items.Rock]
+        self.inventory = [items.Gold(15), items.Rock(), items.Dagger()]
         self.hp = 100
         self.location_x, self.location_y = world.starting_position
         self.victory = False
@@ -17,6 +17,18 @@ class Player:
     def print_inventory(self):
         for item in self.inventory:
             print(item, '\n')
+        best_weapon = self.most_powerful_weapon()
+        print("Your best weapon is your {}".format(best_weapon))
+
+    def most_powerful_weapon(self):
+        max_dmg = 0
+        best_weapon = None
+        for i in self.inventory:
+            if isinstance(i, items.Weapon):
+                if i.damage > max_dmg:
+                    max_dmg = i.damage
+                    best_weapon = i
+        return best_weapon
 
     def move(self, dx, dy):
         self.location_x += dx
