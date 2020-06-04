@@ -1,5 +1,4 @@
 import world
-import player
 from player import Player
 from collections import OrderedDict
 
@@ -28,13 +27,6 @@ def play():
             player.heal()
         else:
             print("Invalid action!")
-
-
-#actions = OrderedDict()
-#if player.inventory:
- #   actions['i'] = player.print_inventory
-  #  actions['I'] = player.print_inventory
-   # print("i: View inventory")
 
 
 def get_available_actions(room, player):

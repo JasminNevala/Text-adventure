@@ -20,7 +20,8 @@ class Player:
         for item in self.inventory:
             print(item, '\n')
         best_weapon = self.most_powerful_weapon()
-       # print("Your best weapon is your {}".format(best_weapon))
+
+    # print("Your best weapon is your {}".format(best_weapon))
 
     def most_powerful_weapon(self):
         max_dmg = 0
@@ -35,11 +36,6 @@ class Player:
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
-
-    """def move(self, dx, dy):  #This might be deleted later
-        self.location_x += dx
-        self.location_y += dy
-        print(world.tile_exists(self.location_x, self.location_y).intro_text())"""
 
     def move_north(self):
         self.move(dx=0, dy=-1)
@@ -69,12 +65,6 @@ class Player:
         if action_method:
             action_method(**kwargs)
 
-    """def flee(self, tile):
-        #Moves the player randomly to an adjacent tile
-        available_moves = tiles.MapTile.adjacent_moves()
-        r = random.randint(0, len(available_moves) - 1)
-        self.do_action(available_moves[r])"""
-
     def heal(self):
         consumables = [item for item in self.inventory
                        if isinstance(item, items.Consumable)]
@@ -90,14 +80,10 @@ class Player:
         while not valid:
             choice = input("")
             try:
-                to_eat = consumables[int(choice)-1]
+                to_eat = consumables[int(choice) - 1]
                 self.hp = min(100, self.hp + to_eat.healing_value)
                 self.inventory.remove(to_eat)
                 print("Current HP: {}".format(self.hp))
                 valid = True
             except(ValueError, IndexError):
                 print("Invalid choice, try again.")
-
-
-
-
