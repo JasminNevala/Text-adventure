@@ -48,7 +48,7 @@ def get_available_actions(room, player):
         if player.hp < 100:
             action_adder(actions, 'h', player.heal, "Heal")
 
-        return actions
+    return actions
 
 
 def action_adder(action_dict, hotkey, action, name):
