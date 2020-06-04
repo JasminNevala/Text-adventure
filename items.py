@@ -33,3 +33,22 @@ class Dagger(Weapon):
 class Rock(Weapon):
     def __init__(self):
         super().__init__(name="Rock", description="A fist sized rock", value=1, damage=1)
+
+
+class Consumable:
+    def __init__(self, name, healing_value):
+        self.name = name
+        self.healing_value = healing_value
+
+    def __str__(self):
+        return "{} (+ {} HP)".format(self.name, self.healing_value)
+
+
+class CrustyBread(Consumable):
+    def __init__(self):
+        super().__init__(name="Crusty Bread", healing_value=10)
+
+
+class HealingPotion(Consumable):
+    def __init__(self):
+        super().__init__(name="Healing Potion", healing_value=50)
